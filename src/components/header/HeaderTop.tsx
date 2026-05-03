@@ -1,6 +1,6 @@
 import { RiFacebookFill, RiMailLine, RiSmartphoneLine } from "@remixicon/react";
 
-export default function HeaderTop() {
+export const HeaderTop = () => {
   return (
     <div className="container-box flex justify-center md:justify-between items-center bg-primary text-primary-foreground py-2">
       <div className="flex items-center gap-4">

@@ -2,7 +2,8 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import appCss from "../styles.css?url";
-import Header from "#/components/header/Header";
+import { Header } from "#/components/header/Header";
+import { useThemeSwitch } from "#/hooks/useThemeSwitch";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -62,6 +63,7 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  useThemeSwitch();
   return (
     <html lang="en">
       <head>

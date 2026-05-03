@@ -40,21 +40,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   danger?: boolean;
 }
 
-export default function Button({
+export const Button = ({
   children,
   className,
   variant = "primary",
   size = "md",
   danger = false,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       className={cn(
         "inline-flex justify-center items-center gap-1 border-2 font-semibold rounded-full disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 ease-in-out",
-        className,
         variantButton[variant],
         sizeButton[size],
+        className,
         danger && dangerButton[variant],
       )}
       {...props}
@@ -62,4 +62,4 @@ export default function Button({
       {children}
     </button>
   );
-}
+};

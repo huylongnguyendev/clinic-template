@@ -1,9 +1,11 @@
-import MenuToggle from "#/components/toggle/MenuToggle";
+import { MenuToggle } from "#/components/toggle/MenuToggle";
+import { ThemeSwitch } from "#/components/toggle/ThemeSwitch";
 
-export default function OthersBar() {
+export const OthersBar = () => {
   return (
-    <div>
+    <div className="flex items-center gap-3">
+      <ThemeSwitch />
       <MenuToggle />
     </div>
   );
-}
+};

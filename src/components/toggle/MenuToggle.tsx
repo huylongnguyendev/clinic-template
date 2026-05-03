@@ -1,9 +1,9 @@
 import { RiMenu4Fill } from "@remixicon/react";
-import Button from "../ui/Button";
+import { Button } from "../ui/Button";
 import { useAppStore } from "@lavaz/store";
 import { store } from "#/store/store";
 
-export default function MenuToggle() {
+export const MenuToggle = () => {
   const [, { setIsOpenMenu }] = useAppStore(store.menu, (s) => s);
   return (
     <Button
@@ -15,4 +15,4 @@ export default function MenuToggle() {
       <RiMenu4Fill />
     </Button>
   );
-}
+};

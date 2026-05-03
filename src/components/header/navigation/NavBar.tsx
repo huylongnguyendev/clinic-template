@@ -3,13 +3,13 @@ import { cn } from "#/lib/utils";
 import { useAppStore } from "@lavaz/store";
 import { NavItem } from "./NavItem";
 import { store } from "#/store/store";
-import Button from "#/components/ui/Button";
+import { Button } from "#/components/ui/Button";
 import { RiCloseLargeFill } from "@remixicon/react";
 import { useClickOutside } from "#/hooks/useClickOutside";
 import { useCallback, useRef } from "react";
 import { useWidthSize } from "#/hooks/useWidthSize";
 
-export default function NavBar() {
+export const NavBar = () => {
   const [isOpenMenu, { setIsOpenMenu, setCloseMenu }] = useAppStore(
     store.menu,
     (s) => s,
@@ -57,4 +57,4 @@ export default function NavBar() {
       </nav>
     </>
   );
-}
+};

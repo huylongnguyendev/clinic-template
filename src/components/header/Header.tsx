@@ -1,11 +1,11 @@
-import HeaderBot from "./HeaderBot";
-import HeaderTop from "./HeaderTop";
+import { HeaderBot } from "./HeaderBot";
+import { HeaderTop } from "./HeaderTop";
 
-export default function Header() {
+export const Header = () => {
   return (
     <header className="sticky top-0 z-50">
       <HeaderTop />
       <HeaderBot />
     </header>
   );
-}
+};
