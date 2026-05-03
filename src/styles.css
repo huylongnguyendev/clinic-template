@@ -58,3 +58,12 @@
     @apply transition-all duration-300 ease-in-out;
   }
 }
+
+@layer components {
+  .contact-header {
+    @apply text-xs flex justify-center items-center gap-0.5 hover:underline;
+  }
+  .contact-social {
+    @apply flex justify-center items-center gap-0.5 opacity-50 hover:opacity-100;
+  }
+}

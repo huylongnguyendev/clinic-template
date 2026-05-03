@@ -17,7 +17,7 @@ const sizeButton = {
   lg: "h-11 px-4 py-2 text-lg [&_svg]:size-5",
   xl: "h-12 px-8 py-2 text-xl [&_svg]:size-5",
   "icon-sm": "size-9 [&_svg]:size-4",
-  icon: "size-10 [&_svg]:size-4",
+  icon: "size-10 [&_svg]:size-5",
   "icon-lg": "size-11 [&_svg]:size-5",
 };
 
@@ -45,7 +45,7 @@ export default function Button({
   className,
   variant = "primary",
   size = "md",
-  danger = true,
+  danger = false,
   ...props
 }: ButtonProps) {
   return (
