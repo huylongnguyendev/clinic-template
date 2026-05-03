@@ -1,10 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
-
 import appCss from "../styles.css?url";
-import Header from "#/components/header/Header";
-import { useTheme } from "#/hooks/useTheme";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -64,7 +61,6 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  useTheme();
 
   return (
     <html lang="en">
@@ -72,7 +68,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body suppressHydrationWarning>
-        <Header />
         <main className="container-box">{children}</main>
         <TanStackDevtools
           config={{

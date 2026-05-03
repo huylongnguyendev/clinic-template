@@ -1,17 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(98.5% 0 0);
+  --foreground: oklch(14.5% 0 0);
+  --primary: oklch(51.79% 0.208 261.74);
+  --primary-foreground: oklch(97% 0.014 254.604);
+  --secondary: oklch(92% 0.004 286.32);
+  --secondary-foreground: oklch(21% 0.006 285.885);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(97.1% 0.013 17.38);
 }
 
-html,
-body,
-#app {
-  min-height: 100%;
+.dark {
+  --background: oklch(20.5% 0 0);
+  --foreground: oklch(97% 0 0);
+  --primary-foreground: oklch(20.5% 0 0);
+  --secondary: oklch(21% 0.006 285.885);
+  --secondary-foreground: oklch(96.7% 0.001 286.375);
+  --destructive-foreground: oklch(97.1% 0.013 17.38);
 }
 
-body {
-  margin: 0;
+@theme inline {
+  --font-sans: "Roboto", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+  --font-sub: "Lato", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
 }
 
+@layer base {
+  * {
+    @apply box-border;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  body {
+    @apply text-foreground bg-background;
+  }
+}
+
+@layer utilities {
+  .container-box {
+    @apply px-3 md:px-15 lg:px-28 w-full;
+  }
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
